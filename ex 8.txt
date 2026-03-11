@@ -1,0 +1,37 @@
+import numpy as np
+
+sales_data = np.array([
+    [101, 250.0, 2],
+    [102, 300.0, 1],
+    [103, 150.0, 5],
+    [104, 400.0, 3],
+    [105, 500.0, 2],
+    [106, 350.0, 4],
+    [107, 275.0, 6],
+    [108, 450.0, 1],
+    [109, 600.0, 2],
+    [110, 220.0, 3]
+])
+
+product_ids = sales_data[:, 0]
+prices = sales_data[:, 1]
+quantities = sales_data[:, 2]
+
+total_revenue_per_product = prices * quantities
+total_revenue = np.sum(total_revenue_per_product)
+
+average_price = np.mean(prices)
+weighted_average_price = np.sum(prices * quantities) / np.sum(quantities)
+
+highest_price = np.max(prices)
+lowest_price = np.min(prices)
+
+print("Product IDs:", product_ids)
+print("Prices:", prices)
+print("Quantities Sold:", quantities)
+print("Total Revenue per Product:", total_revenue_per_product)
+print("Total Revenue:", total_revenue)
+print("Average Price (Simple Mean):", average_price)
+print("Average Price (Weighted by Quantity):", weighted_average_price)
+print("Highest Price:", highest_price)
+print("Lowest Price:", lowest_price)
